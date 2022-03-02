@@ -31,3 +31,7 @@ yarn-error.log*
 .swp
 .swo
 
+# images 
+assets
+public/assets
+src/assets
