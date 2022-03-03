@@ -1,5 +1,6 @@
-import {IonButton, IonCard, IonCardContent} from '@ionic/react';
+import {IonIcon, IonButton, IonCard, IonCardContent} from '@ionic/react';
 import {useState} from 'react';
+import { walk } from 'ionicons/icons';
 
 
 export default function FortuneCookie() {
@@ -16,6 +17,7 @@ export default function FortuneCookie() {
   if(fortune) {
     content =      
       <IonCard>
+      <IonIcon icon={walk} slot="start" />
         <IonCardContent>
           {fortune}
         </IonCardContent>
@@ -23,12 +25,13 @@ export default function FortuneCookie() {
   }
 
   return (
-    <>
-    <IonButton onClick={handleClick}>
-      Hello
-    </IonButton>
+    <div class="ion-text-center">
+      <br />
+      <IonButton onClick={handleClick}>
+        Open Fortune Cookie
+      </IonButton>
     {content}
 
-    </>
+    </div>
   );
 }
