@@ -7,8 +7,16 @@ export default function FortuneCookie() {
 
   const [fortune, setFortune] = useState('');
 
-  function handleClick() {
-    setFortune("Nice one");
+  async function handleClick() {
+    setFortune('');
+    try {
+      const response = await fetch('https://ajnabee.azurewebsites.net/fortune');
+      const data  = await response.json();
+      setFortune(data[0].text);
+    } catch(e) {
+      setFortune('You will visit a new place and have fun!')
+      console.log("Caught error: " + e)
+    }
   }
 
 
